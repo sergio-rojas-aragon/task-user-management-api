@@ -1,6 +1,3 @@
 @GTU.Api_HostAddress = http://localhost:5253
 
-GET {{GTU.Api_HostAddress}}/weatherforecast/
-Accept: application/json
-
 ###

@@ -3,7 +3,7 @@ using GTU.Api.DTOs;
 using GTU.Api.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SQLitePCL;
+
 
 namespace GTU.Api.Controllers
 {
@@ -33,7 +33,7 @@ namespace GTU.Api.Controllers
                 Descripcion = tarea.Descripcion,
                 Titulo = tarea.Titulo,
                 Estado = tarea.Estado,
-                UsuarioId = 1,
+                UsuarioId = tarea.UsuarioId,
 
             };
 

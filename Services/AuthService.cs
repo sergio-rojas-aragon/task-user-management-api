@@ -49,13 +49,16 @@ namespace GTU.Api.Services
 
         public async Task<AuthDTO> Login(LoginDTO lgn) 
         {
-            if (await _context.Usuarios.AnyAsync(u => u.Email != lgn.Email))
-            {
+
+            var usr = await _context.Usuarios.Where(u => u.Email == lgn.Email).FirstOrDefaultAsync();
+            if (usr == null) {
+
                 // usuario ya registrado
                 return new AuthDTO { Estado = false, Mensaje = "Usuario o contraseña incorrecta" };
             }
 
-            var usr = await _context.Usuarios.Where(u => u.Email == lgn.Email).FirstOrDefaultAsync();
+ 
+        
 
             HashService hashServ = new HashService();
             var resp = hashServ.VerificarPasswordHash(lgn.Password, usr.PasswordHash, usr.PasswordSalt);
