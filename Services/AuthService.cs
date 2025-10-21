@@ -57,9 +57,6 @@ namespace GTU.Api.Services
                 return new AuthDTO { Estado = false, Mensaje = "Usuario o contraseña incorrecta" };
             }
 
- 
-        
-
             HashService hashServ = new HashService();
             var resp = hashServ.VerificarPasswordHash(lgn.Password, usr.PasswordHash, usr.PasswordSalt);
             if (resp)

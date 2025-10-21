@@ -11,7 +11,7 @@ Tecnologias utilizadas:
 
 Repositorios de Fronts Relacionados:
 
-* [Front con Angular 18](https://github.com/sergio-rojas-aragon/task-user-management-angular)
+* [Front con Angular 18 y Node v20.19.5](https://github.com/sergio-rojas-aragon/task-user-management-angular)
 
 
 

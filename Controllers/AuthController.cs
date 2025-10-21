@@ -1,13 +1,14 @@
 ﻿using GTU.Api.DTOs;
 using GTU.Api.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GTU.Api.Controllers
 {
-
+    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthController : Controller
+    public class AuthController : ControllerBase
     {
         private AuthService _authSrv;
 
@@ -44,7 +45,6 @@ namespace GTU.Api.Controllers
 
         // POST: UsuariosController/login
         [HttpPost("login")]
-
         public async Task<ActionResult<UserResponse>> Login([FromBody] LoginDTO lg)
         {
             try
