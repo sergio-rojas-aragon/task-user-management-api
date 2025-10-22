@@ -4,7 +4,7 @@ namespace GTU.Api.Models
 {
     public class Usuario
     {
-        public int Id { get; set; }
+        public int UsuarioId { get; set; }
         [Required]
         public string Nombre { get; set; } = string.Empty;
         [Required]
@@ -17,7 +17,11 @@ namespace GTU.Api.Models
         public byte[] PasswordSalt { get; set; }
 
         // Relacion uno a muchos
-        public List<Tarea> Tareas { get; set; }
+        public ICollection<Tarea> Tareas { get; set; } = new List<Tarea>();
+
+        // claves foraneas
+        public int RolId { get; set; }
+        public Rol Rol { get; set; } = null!;
 
     }
 }

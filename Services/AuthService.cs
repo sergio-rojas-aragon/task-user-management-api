@@ -44,7 +44,7 @@ namespace GTU.Api.Services
             // generacion de token
             var token = _tokenServ.CrearToken(usr);
 
-            return new AuthDTO { Id = usr.Id, Nombre= usr.Nombre, Email= usr.Email, Token= token, Estado=true };
+            return new AuthDTO { Id = usr.UsuarioId, Nombre= usr.Nombre, Email= usr.Email, Token= token, Estado=true };
         }
 
         public async Task<AuthDTO> Login(LoginDTO lgn) 
@@ -63,7 +63,7 @@ namespace GTU.Api.Services
             {
 
                 var token = _tokenServ.CrearToken(usr);
-                return new AuthDTO { Id = usr.Id, Nombre = usr.Nombre, Email = usr.Email, Token = token, Estado = true };
+                return new AuthDTO { Id = usr.UsuarioId, Nombre = usr.Nombre, Email = usr.Email, Token = token, Estado = true };
 
             }
             else {
